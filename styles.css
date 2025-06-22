@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 body {
@@ -151,16 +154,18 @@ body {
 }
 
 .contact-info {
-    font-size: 0.9rem;
-    color: #1e1e1e;
-    opacity: 0.8;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    z-index: 1;
+    padding: 0.5rem 1rem; /* tighter padding */
+    backdrop-filter: blur(8px);
+    text-align: center;
+    font-size: 0.85rem;
+    color: #1e1e1e;
+    z-index: 1000;
+    opacity: 0.9;
+    line-height: 1.4;
 }
 
 .contact-info a {
@@ -195,7 +200,6 @@ body {
     }
 }
 
-/* Subtle particle effect */
 .particles {
     position: fixed;
     top: 0;
