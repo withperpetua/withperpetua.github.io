@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://withperpetua.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="https://em-content.zobj.net/source/apple/271/headstone_1faa6.png">
     <title>Because Your Data Should Rest in Peace 🕊️</title>
@@ -61,6 +60,12 @@
                 return false;
             }
         });
+    </script>
+
+    <script>
+      if (window.location.hostname === 'withperpetua.github.io') {
+        window.location.href = 'https://withperpetua.com' + window.location.pathname + window.location.search + window.location.hash;
+      }
     </script>
 </body>
 </html>
