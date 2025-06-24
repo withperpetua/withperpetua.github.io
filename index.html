@@ -17,9 +17,14 @@
 
         <p class="subheadline">We're building something to help you protect what matters most. Sign up for updates.</p>
 
-        <form class="signup-form" id="signupForm">
+        <form class="signup-form"
+              id="signupForm"
+              action="https://script.google.com/macros/s/AKfycbwWmXBSgMLeyMYgVIcktRc3nJq3WBZjphxDvj5LbshTHM2QC31m-RFQLAl3L0Vw11-7/exec"
+              method="POST">
+              <!-- onsubmit="this.submit(); this.reset(); return false;"> -->
             <input
                 type="email"
+                name="email"
                 class="email-input"
                 placeholder="Email Address"
                 required
@@ -27,6 +32,8 @@
             >
             <button type="submit" class="cta-button">Join Our Waitlist</button>
         </form>
+
+        <p id="confirmation-message" style="display:none; margin-top:1em;">You're on the waitlist! 🎉</p>
     </div>
 
     <p>
@@ -67,5 +74,25 @@
         window.location.href = 'https://withperpetua.com' + window.location.pathname + window.location.search + window.location.hash;
       }
     </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById("signupForm").addEventListener("submit", function (e) {
+                e.preventDefault(); // prevents page reload
+                const email = document.getElementById("emailInput").value;
+                const webhookURL = "https://script.google.com/macros/s/AKfycbwWmXBSgMLeyMYgVIcktRc3nJq3WBZjphxDvj5LbshTHM2QC31m-RFQLAl3L0Vw11-7/exec";
+                fetch(webhookURL, {
+                    method: "POST",
+                    mode: "no-cors", // suppresses CORS errors
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams({ email: email }),
+                });
+                document.getElementById("emailInput").value = "";
+                document.getElementById("confirmation-message").style.display = "block";
+            });
+        });
+      </script>
 </body>
 </html>
