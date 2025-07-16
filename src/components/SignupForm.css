@@ -1,0 +1,77 @@
+.signup-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 10;
+}
+
+.email-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(3, 49, 46, 0.1);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: 'Geist', sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.email-input:focus {
+    border-color: #03312e;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(3, 49, 46, 0.1);
+}
+
+.email-input::placeholder {
+    color: #666;
+    opacity: 0.7;
+}
+
+.email-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background: #03312e;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Geist', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 160px;
+}
+
+.cta-button:hover:not(:disabled) {
+    background: #1e1e1e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(3, 49, 46, 0.2);
+}
+
+.cta-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 640px) {
+    .signup-form {
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .email-input {
+        min-width: auto;
+        width: 100%;
+    }
+} 

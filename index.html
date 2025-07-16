@@ -1,98 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
     <link rel="icon" type="image/png" sizes="32x32" href="https://em-content.zobj.net/source/apple/271/headstone_1faa6.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Because Your Data Should Rest in Peace 🕊️</title>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <div class="container">
-        <div class="logo-image">
-          <img src="./images/header.png" alt="Perpetua" class="logo-image"></img>
-        </div>
-
-        <p class="subheadline">We're building something to help you protect what matters most. Sign up for updates.</p>
-
-        <form class="signup-form"
-              id="signupForm"
-              action="https://script.google.com/macros/s/AKfycbwWmXBSgMLeyMYgVIcktRc3nJq3WBZjphxDvj5LbshTHM2QC31m-RFQLAl3L0Vw11-7/exec"
-              method="POST">
-              <!-- onsubmit="this.submit(); this.reset(); return false;"> -->
-            <input
-                type="email"
-                name="email"
-                class="email-input"
-                placeholder="Email Address"
-                required
-                id="emailInput"
-            >
-            <button type="submit" class="cta-button">Join Our Waitlist</button>
-        </form>
-
-        <p id="confirmation-message" style="display:none; margin-top:1em;">You're on the waitlist! 🎉</p>
-    </div>
-
-    <p>
-
-    <div class="contact-info">
-        Want to get in touch? Shoot us a note at <a href="mailto:signup@withperpetua.com">signup@withperpetua.com</a>
-    </div>
-
-    <script src="script.js"></script>
-
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            return false;
-        });
-
-        document.addEventListener('keydown', function(e) {
-            // F12
-            if (e.keyCode === 123) {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl+Shift+I
-            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl+U
-            if (e.ctrlKey && e.keyCode === 85) {
-                e.preventDefault();
-                return false;
-            }
-        });
-    </script>
-
-    <script>
-      if (window.location.hostname === 'withperpetua.github.io') {
-        window.location.href = 'https://withperpetua.com' + window.location.pathname + window.location.search + window.location.hash;
-      }
-    </script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById("signupForm").addEventListener("submit", function (e) {
-                e.preventDefault(); // prevents page reload
-                const email = document.getElementById("emailInput").value;
-                const webhookURL = "https://script.google.com/macros/s/AKfycbwWmXBSgMLeyMYgVIcktRc3nJq3WBZjphxDvj5LbshTHM2QC31m-RFQLAl3L0Vw11-7/exec";
-                fetch(webhookURL, {
-                    method: "POST",
-                    mode: "no-cors", // suppresses CORS errors
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                    body: new URLSearchParams({ email: email }),
-                });
-                document.getElementById("emailInput").value = "";
-                document.getElementById("confirmation-message").style.display = "block";
-            });
-        });
-      </script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
