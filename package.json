@@ -1,6 +1,7 @@
 {
   "name": "perpetua-landing",
-  "private": true,
+  "private": false,
+  "homepage": "https://withperpetua.github.io/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
