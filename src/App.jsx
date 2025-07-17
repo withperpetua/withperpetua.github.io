@@ -73,7 +73,7 @@ function App() {
 
         {isSubmitted && (
           <p className="confirmation-message">
-            You're on the waitlist! 🎉
+            Thank you for joining our waitlist! 🎉
           </p>
         )}
       </div>
