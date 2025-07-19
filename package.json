@@ -1,7 +1,7 @@
 {
   "name": "perpetua-landing",
   "private": false,
-  "homepage": "https://withperpetua.github.io/",
+  "homepage": "https://withperpetua.github.io/withperpetua.github.ios",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -23,6 +23,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "vite": "^5.0.8"
+    "gh-pages": "^6.3.0",
+    "vite": "^7.0.5"
   }
-} 
+}
