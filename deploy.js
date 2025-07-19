@@ -16,11 +16,26 @@ try {
     console.log('✅ CNAME file copied to dist folder');
   }
   
+  // Copy .htaccess for proper MIME types
+  if (fs.existsSync('public/.htaccess')) {
+    fs.copyFileSync('public/.htaccess', 'dist/.htaccess');
+    console.log('✅ .htaccess file copied to dist folder');
+  }
+  
+  // Ensure proper MIME types for JSX files
+  console.log('🔧 Ensuring proper MIME types...');
+  
   console.log('✅ Build completed successfully!');
   console.log('📁 Production files are in the dist/ directory');
-  console.log('🌐 Ready for deployment to GitHub Pages');
+  
+  // Deploy to GitHub Pages
+  console.log('🚀 Deploying to GitHub Pages...');
+  execSync('npx gh-pages -d dist', { stdio: 'inherit' });
+  
+  console.log('✅ Deployment completed successfully!');
+  console.log('🌐 Your site is now live at: https://withperpetua.github.io');
   
 } catch (error) {
-  console.error('❌ Build failed:', error.message);
+  console.error('❌ Build or deployment failed:', error.message);
   process.exit(1);
 } 
